@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="icon" href="./assets/Main.svg">
+  <link rel="stylesheet" href="./CSS/checkout.css">
+</head>
+
+<body>
+  <div id="header"> </div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+
+
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+
+
+
+
+    <form id="checkoutForm">
+      <input id="name" placeholder="Name">
+      <input id="email" placeholder="Email">
+      <input id="address" placeholder="Address">
+      <!-- <button type="submit">Place Order</button> -->
+    </form>
+    <div class="checkout-summary">
+      <h3>Order Summary</h3>
+      <p id="itemCount">Items: 0</p>
+      <p id="totalAmount">Total: $0.00</p>
+      <button id="placeOrderBtn" type="submit" form="checkoutForm">Place Order</button>
+    </div>
+
+
+    <div id="thankyou-popup" class="popup">
+      <div class="popup-content">
+        <h2>🎉 Thank you for your order!</h2>
+        <p>Your order has been placed successfully.</p>
+        <button id="close-popup">Close</button>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        });
+    </script>
+
+    <script src="./Javascript/checkout.js"></script>
+</body>
+
+</html>

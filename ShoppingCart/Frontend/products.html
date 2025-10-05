@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickCart</title>
+  <link rel="icon" href="./assets/Main.svg">
+  <link rel="stylesheet" href="./CSS/products.css" />
+
+
+</head>
+
+<body>
+
+  <div id="header"> </div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+
+
+  <main>
+    <div id="product" class="product-cards"></div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+  <script src="./Javascript/product.js"></script>
+</body>
+
+</html>
